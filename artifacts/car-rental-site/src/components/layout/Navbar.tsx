@@ -34,10 +34,12 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2 group">
-            <span className="font-serif text-2xl font-bold tracking-wide text-foreground group-hover:text-primary transition-colors">
-              DHRUVA TOUR
-            </span>
+          <Link href="/" className="flex items-center gap-2 group" aria-label="Dhruva Tour home">
+            <img
+              src="/dhruva_logo-kSTvWFFw.jpeg"
+              alt="Dhruva Tours & Travels"
+              className="h-14 w-auto max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-[1.02] sm:h-16"
+            />
           </Link>
 
           {/* Desktop Nav */}
