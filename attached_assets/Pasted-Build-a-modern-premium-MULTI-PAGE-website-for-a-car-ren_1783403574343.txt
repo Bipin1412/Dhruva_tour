@@ -1,0 +1,120 @@
+Build a modern, premium MULTI-PAGE website for a car rental and tour 
+package business. Do NOT copy or reference the visual design of any 
+existing site — design everything fresh: original layout, original 
+color palette, original typography pairing, and original component 
+styling. Only the business data below should be reused.
+
+SITE STRUCTURE (separate pages/routes, shared header + footer)
+- / (Home)
+- /fleet
+- /services
+- /packages
+- /packages/[package-name]  (individual package detail page)
+- /gallery
+- /about
+- /contact
+- 404 page (styled, on-brand)
+
+Shared navbar: logo, Home / Fleet / Services / Packages / Gallery / 
+About / Contact, sticky on scroll, mobile hamburger menu with slide-in 
+drawer. Shared footer: quick links, contact info, social icons, 
+copyright.
+
+BRAND
+- Business type: Private car rental + outstation tour packages
+- Service cities: Pune, Mumbai, Nashik (also covers Shirdi, Goa, 
+  Mahabaleshwar, Lonavala)
+- Positioning: Verified drivers, transparent per-km pricing, 
+  24/7 dispatch, no hidden fees
+- Contact: Phone/WhatsApp number, email, GST invoices, corporate 
+  billing available
+
+DESIGN DIRECTION (make it feel premium, not templated)
+- Distinctive palette (avoid generic blue-and-white travel look) — 
+  e.g. deep charcoal/graphite + warm amber/copper accent, or rich 
+  navy + gold
+- Strong display serif or geometric sans for headings, clean sans 
+  for body
+- Generous whitespace, large hero imagery, subtle gradient/grain 
+  overlays for depth
+- Micro-interactions: scroll-triggered fade/slide-ins, hover lift + 
+  shadow on cards, animated counters, smooth page-to-page transitions
+- Mobile-first responsive layout throughout
+
+PAGE-BY-PAGE CONTENT
+
+Home (/)
+- Hero: headline, subheadline, dual CTA (Reserve Now / WhatsApp), 
+  rotating/parallax background images
+- Trust stats bar: trips completed, average rating, dispatch hours, 
+  verified drivers count
+- Fleet preview (3-4 cards, link to /fleet)
+- Popular routes grid (link to /packages or /contact for quotes)
+- Services preview grid (link to /services)
+- Testimonials carousel
+- FAQ accordion
+- CTA banner linking to /contact
+
+Fleet (/fleet)
+- Full vehicle lineup: photo, name, passenger/bag capacity, per-km 
+  rate, "Book This Car" CTA per card
+- Filter/sort by capacity or price (nice-to-have)
+
+Services (/services)
+- Detailed cards: airport transfers, one-way trips, round trips, 
+  corporate travel, wedding car rental, outstation taxi, custom tours
+- Each with icon, description, and inquiry CTA
+
+Packages (/packages)
+- Grid of tour packages (card: destination image, duration, 
+  starting price, "View Details" → links to /packages/[slug])
+
+Package detail (/packages/[package-name])
+- Hero image, itinerary breakdown (day-by-day), inclusions/exclusions, 
+  price, booking CTA
+
+Gallery (/gallery)
+- Masonry/grid of vehicle and destination images, lightbox on click
+
+About (/about)
+- Company story, verified-driver process, coverage area map, 
+  founder/team blurb (optional), stats
+
+Contact (/contact)
+- Inquiry form (name, phone, route, date, vehicle type, message), 
+  phone/WhatsApp/email, embedded map placeholder
+
+SAMPLE DATA
+Fleet:
+- Swift Dzire or similar — 4 passengers, 3 bags — ₹13/km
+- Ciaz / Honda City or similar — 4 passengers, 3 bags — ₹15/km
+- Ertiga or similar — 6 passengers, 4 bags — ₹15/km
+- Kia Carens — 6 passengers, 4 bags — ₹16/km
+- Innova Crysta — 7 passengers, 5 bags — ₹20/km
+Policy notes: 300 km minimum/day, Mumbai return trips 350 km/day, 
+toll/parking/permits extra, driver allowance ₹500 day / ₹500 night
+
+Popular routes / packages:
+- Pune → Mumbai, ~3 hrs, from ₹2,500
+- Pune → Shirdi, ~4 hrs, from ₹3,200
+- Pune → Nashik, ~4.5 hrs, from ₹3,500
+- Pune → Mahabaleshwar, ~3.5 hrs, from ₹3,000
+- Mumbai → Nashik, ~3.5 hrs, from ₹3,400
+- Pune → Lonavala, ~1.5 hrs, from ₹1,800
+
+Stats: 15,000+ trips completed, 4.9/5 average rating, 24/7 dispatch, 
+120+ verified drivers
+
+FAQ topics: booking process, what's included in per-km rate, minimum 
+km charge, one-way pricing availability, driver verification process
+
+TECH
+- Multi-page routing (Next.js App Router recommended, or React Router 
+  if plain SPA / or plain multi-file HTML if static)
+- Fully responsive, accessible (alt text, contrast, focus states)
+- Placeholder images from Unsplash/Pexels until real photos supplied
+- Smooth entrance animations (Framer Motion or Intersection Observer + CSS)
+
+Do not reuse the layout, color scheme, page structure, or copywriting 
+style of any reference site — treat reference data only as content, 
+never as a design source.
