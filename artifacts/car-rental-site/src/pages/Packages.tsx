@@ -43,7 +43,7 @@ export default function Packages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-card border border-white/5 hover:border-white/20 transition-all group flex flex-col"
+              className="bg-card border border-foreground/10 hover:border-foreground/25 transition-all group flex flex-col"
             >
               <Link href={`/packages/${pkg.slug}`} className="block flex-1 flex flex-col">
                 <div className="h-56 overflow-hidden relative">
@@ -54,7 +54,7 @@ export default function Packages() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <h3 className="text-2xl font-serif text-white">{pkg.title}</h3>
+                    <h3 className="text-2xl font-serif text-foreground drop-shadow-sm">{pkg.title}</h3>
                   </div>
                 </div>
                 
@@ -68,7 +68,7 @@ export default function Packages() {
                     {pkg.description}
                   </p>
                   
-                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-foreground/10">
                     <div>
                       <span className="text-xs text-muted-foreground uppercase tracking-wider block mb-1">Starting From</span>
                       <span className="text-xl font-medium">{pkg.startingPrice}</span>

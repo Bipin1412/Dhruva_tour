@@ -97,7 +97,7 @@ export default function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-background border border-white/10 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
+                      className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
                     />
                   </div>
                   <div className="space-y-2">
@@ -108,7 +108,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-background border border-white/10 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
+                      className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
                     />
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function Contact() {
                       value={formData.pickup}
                       onChange={handleChange}
                       placeholder={prefilledRoute ? 'Pune' : ''}
-                      className="w-full bg-background border border-white/10 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
+                      className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
                     />
                   </div>
                   <div className="space-y-2">
@@ -135,7 +135,7 @@ export default function Contact() {
                       value={formData.dropoff}
                       onChange={handleChange}
                       placeholder={prefilledRoute ? packages.find(p=>p.slug === prefilledRoute)?.title.split(' to ')[1] : ''}
-                      className="w-full bg-background border border-white/10 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
+                      className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
                     />
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export default function Contact() {
                       name="date"
                       value={formData.date}
                       onChange={handleChange}
-                      className="w-full bg-background border border-white/10 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground [color-scheme:dark]"
+                      className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground [color-scheme:light]"
                     />
                   </div>
                   <div className="space-y-2">
@@ -158,7 +158,7 @@ export default function Contact() {
                       name="vehicle"
                       value={formData.vehicle}
                       onChange={handleChange}
-                      className="w-full bg-background border border-white/10 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground appearance-none rounded-none"
+                      className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground appearance-none rounded-none"
                     >
                       <option value="">Select a vehicle (optional)</option>
                       {fleet.map(car => (
@@ -176,7 +176,7 @@ export default function Contact() {
                     onChange={handleChange}
                     rows={4}
                     placeholder="Flight numbers, special requests, corporate billing details..."
-                    className="w-full bg-background border border-white/10 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground resize-none"
+                    className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground resize-none"
                   ></textarea>
                 </div>
 
@@ -239,7 +239,7 @@ export default function Contact() {
               </ul>
             </div>
 
-            <div className="p-8 bg-card border border-white/5 mt-12">
+            <div className="p-8 bg-card border border-foreground/10 mt-12">
               <h4 className="font-serif text-xl mb-4">Corporate Inquiries</h4>
               <p className="text-muted-foreground font-light mb-6">
                 Looking for a reliable transportation partner for your team? We offer monthly billing, dedicated account managers, and GST compliance.

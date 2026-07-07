@@ -51,35 +51,41 @@
 }
 
 :root {
-  --background: 0 0% 6%;
-  --foreground: 38 31% 94%;
-  --border: 0 0% 15%;
-  --card: 0 0% 9%;
-  --card-foreground: 38 31% 94%;
-  --card-border: 0 0% 15%;
-  --sidebar: 0 0% 9%;
-  --sidebar-foreground: 38 31% 94%;
-  --sidebar-border: 0 0% 15%;
-  --sidebar-primary: 32 59% 51%;
-  --sidebar-primary-foreground: 0 0% 6%;
-  --sidebar-accent: 0 0% 15%;
-  --sidebar-accent-foreground: 38 31% 94%;
-  --sidebar-ring: 32 59% 51%;
-  --popover: 0 0% 9%;
-  --popover-foreground: 38 31% 94%;
-  --popover-border: 0 0% 15%;
-  --primary: 32 59% 51%;
-  --primary-foreground: 0 0% 6%;
-  --secondary: 0 0% 15%;
-  --secondary-foreground: 38 31% 94%;
-  --muted: 0 0% 15%;
-  --muted-foreground: 0 0% 60%;
-  --accent: 32 59% 51%;
-  --accent-foreground: 0 0% 6%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-  --input: 0 0% 15%;
-  --ring: 32 59% 51%;
+  /* Dhruva Tour palette — warm cream + brown + slate */
+  --background: 41 43% 91%;        /* #F2ECDF warm cream */
+  --foreground: 29 35% 15%;        /* very dark warm brown */
+  --border: 29 15% 78%;            /* warm medium border */
+  --card: 38 55% 96%;              /* #FBF3E7 light cream */
+  --card-foreground: 29 35% 15%;
+  --card-border: 29 15% 83%;
+  --sidebar: 41 35% 87%;
+  --sidebar-foreground: 29 35% 15%;
+  --sidebar-border: 29 15% 78%;
+  --sidebar-primary: 29 35% 36%;   /* #7B5A3B warm brown */
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 38 55% 96%;
+  --sidebar-accent-foreground: 29 35% 15%;
+  --sidebar-ring: 29 35% 36%;
+  --popover: 38 55% 96%;
+  --popover-foreground: 29 35% 15%;
+  --popover-border: 29 15% 83%;
+  --primary: 29 35% 36%;           /* #7B5A3B warm brown */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 208 18% 33%;        /* #455563 slate blue-grey */
+  --secondary-foreground: 0 0% 100%;
+  --muted: 41 30% 84%;
+  --muted-foreground: 29 15% 48%;
+  --accent: 29 35% 36%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 29 15% 78%;
+  --ring: 29 35% 36%;
+  --chart-1: 29 35% 36%;
+  --chart-2: 208 18% 33%;
+  --chart-3: 41 43% 68%;
+  --chart-4: 29 25% 55%;
+  --chart-5: 208 25% 55%;
 
   --app-font-sans: 'Plus Jakarta Sans', sans-serif;
   --app-font-serif: 'Playfair Display', serif;
@@ -87,6 +93,52 @@
   
   --radius: 0.5rem;
   
+  --shadow-2xs: 0px 2px 0px 0px rgba(78,60,43,0.08);
+  --shadow-xs: 0px 2px 0px 0px rgba(78,60,43,0.08);
+  --shadow-sm: 0px 2px 0px 0px rgba(78,60,43,0.08), 0px 1px 2px -1px rgba(78,60,43,0.12);
+  --shadow: 0px 2px 0px 0px rgba(78,60,43,0.08), 0px 1px 2px -1px rgba(78,60,43,0.12);
+  --shadow-md: 0px 2px 0px 0px rgba(78,60,43,0.08), 0px 2px 4px -1px rgba(78,60,43,0.15);
+  --shadow-lg: 0px 2px 0px 0px rgba(78,60,43,0.08), 0px 4px 6px -1px rgba(78,60,43,0.18);
+  --shadow-xl: 0px 2px 0px 0px rgba(78,60,43,0.08), 0px 8px 10px -1px rgba(78,60,43,0.22);
+  --shadow-2xl: 0px 2px 0px 0px rgba(78,60,43,0.25);
+}
+
+.dark {
+  --background: 29 22% 8%;
+  --foreground: 41 43% 91%;
+  --border: 29 15% 20%;
+  --card: 29 18% 12%;
+  --card-foreground: 41 43% 91%;
+  --card-border: 29 15% 20%;
+  --sidebar: 29 18% 12%;
+  --sidebar-foreground: 41 43% 91%;
+  --sidebar-border: 29 15% 20%;
+  --sidebar-primary: 29 40% 52%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 29 15% 18%;
+  --sidebar-accent-foreground: 41 43% 91%;
+  --sidebar-ring: 29 40% 52%;
+  --popover: 29 18% 12%;
+  --popover-foreground: 41 43% 91%;
+  --popover-border: 29 15% 20%;
+  --primary: 29 40% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 208 15% 28%;
+  --secondary-foreground: 0 0% 95%;
+  --muted: 29 15% 18%;
+  --muted-foreground: 41 25% 65%;
+  --accent: 29 40% 52%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 29 15% 20%;
+  --ring: 29 40% 52%;
+  --chart-1: 29 40% 52%;
+  --chart-2: 208 18% 40%;
+  --chart-3: 41 43% 70%;
+  --chart-4: 29 25% 60%;
+  --chart-5: 208 25% 55%;
+
   --shadow-2xs: 0px 2px 0px 0px rgba(0,0,0,0.5);
   --shadow-xs: 0px 2px 0px 0px rgba(0,0,0,0.5);
   --shadow-sm: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 1px 2px -1px rgba(0,0,0,0.5);
@@ -95,39 +147,6 @@
   --shadow-lg: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 4px 6px -1px rgba(0,0,0,0.5);
   --shadow-xl: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 8px 10px -1px rgba(0,0,0,0.5);
   --shadow-2xl: 0px 2px 0px 0px rgba(0,0,0,0.5);
-}
-
-.dark {
-  /* It is already dark mode by default, so we copy the root vars here to ensure full support */
-  --background: 0 0% 6%;
-  --foreground: 38 31% 94%;
-  --border: 0 0% 15%;
-  --card: 0 0% 9%;
-  --card-foreground: 38 31% 94%;
-  --card-border: 0 0% 15%;
-  --sidebar: 0 0% 9%;
-  --sidebar-foreground: 38 31% 94%;
-  --sidebar-border: 0 0% 15%;
-  --sidebar-primary: 32 59% 51%;
-  --sidebar-primary-foreground: 0 0% 6%;
-  --sidebar-accent: 0 0% 15%;
-  --sidebar-accent-foreground: 38 31% 94%;
-  --sidebar-ring: 32 59% 51%;
-  --popover: 0 0% 9%;
-  --popover-foreground: 38 31% 94%;
-  --popover-border: 0 0% 15%;
-  --primary: 32 59% 51%;
-  --primary-foreground: 0 0% 6%;
-  --secondary: 0 0% 15%;
-  --secondary-foreground: 38 31% 94%;
-  --muted: 0 0% 15%;
-  --muted-foreground: 0 0% 60%;
-  --accent: 32 59% 51%;
-  --accent-foreground: 0 0% 6%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-  --input: 0 0% 15%;
-  --ring: 32 59% 51%;
 }
 
 @layer base {

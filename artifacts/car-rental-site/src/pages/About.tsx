@@ -24,7 +24,7 @@ export default function About() {
               className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed"
             >
               <p>
-                Journeymate began with a simple observation: the Indian private transport sector was plagued by unpredictability. Cabs cancelled at the last minute, hidden charges appeared at the end of the trip, and vehicle quality was always a gamble.
+                Dhruva Tour began with a simple observation: the Indian private transport sector was plagued by unpredictability. Cabs cancelled at the last minute, hidden charges appeared at the end of the trip, and vehicle quality was always a gamble.
               </p>
               <p>
                 We decided to build an alternative for those who value their time and peace of mind. We don't aggregate random drivers. We operate a tightly controlled network of verified professionals and well-maintained premium vehicles.
@@ -38,7 +38,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="relative aspect-square lg:aspect-[4/5] border border-white/5 overflow-hidden"
+            className="relative aspect-square lg:aspect-[4/5] border border-foreground/10 overflow-hidden"
           >
             <img 
               src="https://images.unsplash.com/photo-1518081461904-9d8f136351c2?w=1200&auto=format&fit=crop" 
@@ -51,7 +51,7 @@ export default function About() {
       </section>
 
       {/* The Process */}
-      <section className="bg-card border-y border-white/5 py-24">
+      <section className="bg-card border-y border-foreground/10 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif mb-6">Our Core Commitments</h2>
@@ -90,7 +90,7 @@ export default function About() {
                   transition={{ delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 mx-auto bg-background border border-white/10 flex items-center justify-center mb-6 text-primary">
+                  <div className="w-16 h-16 mx-auto bg-background border border-foreground/15 flex items-center justify-center mb-6 text-primary">
                     <Icon className="w-8 h-8" />
                   </div>
                   <h3 className="text-xl font-medium mb-4">{item.title}</h3>

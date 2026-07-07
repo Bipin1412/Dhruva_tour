@@ -36,7 +36,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (index % 3) * 0.1 }}
-              className="relative group overflow-hidden cursor-pointer break-inside-avoid border border-white/5"
+              className="relative group overflow-hidden cursor-pointer break-inside-avoid border border-foreground/10"
               onClick={() => setSelectedImage(src)}
             >
               <img 
@@ -45,7 +45,7 @@ export default function Gallery() {
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-background/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-[#2F1E0E]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <ZoomIn className="w-8 h-8 text-primary" />
               </div>
             </motion.div>
@@ -61,7 +61,7 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-background/95 backdrop-blur flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-[100] bg-[#1A0F08]/95 backdrop-blur flex items-center justify-center p-4 sm:p-8"
             onClick={() => setSelectedImage(null)}
           >
             <button 

@@ -21,8 +21,8 @@ export default function PackageDetail() {
       <div className="relative h-[60vh] min-h-[400px] flex items-end">
         <div className="absolute inset-0">
           <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+          <div className="absolute inset-0 bg-[#2F1E0E]/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2F1E0E] via-[#2F1E0E]/60 to-transparent" />
         </div>
         
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
@@ -63,7 +63,7 @@ export default function PackageDetail() {
                   <div key={index} className="flex gap-6 relative">
                     {/* Line connection */}
                     {index !== pkg.itinerary.length - 1 && (
-                      <div className="absolute left-[11px] top-8 bottom-[-32px] w-[1px] bg-white/10" />
+                      <div className="absolute left-[11px] top-8 bottom-[-32px] w-[1px] bg-foreground/15" />
                     )}
                     <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center shrink-0 mt-1 relative z-10">
                       <div className="w-2 h-2 rounded-full bg-primary-foreground" />
@@ -77,7 +77,7 @@ export default function PackageDetail() {
               </div>
             </section>
 
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-card border border-white/5 p-8">
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-card border border-foreground/10 p-8">
               <div>
                 <h3 className="text-xl font-serif mb-6 flex items-center gap-2">
                   <Check className="text-green-500 w-5 h-5" /> Inclusions

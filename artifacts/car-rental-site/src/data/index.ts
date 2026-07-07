@@ -1,13 +1,13 @@
 export const contactInfo = {
   phone: "+91 98765 43210",
   whatsapp: "+91 98765 43210",
-  email: "info@journeymate.in",
+  email: "info@dhruvatour.in",
   address: "Koregaon Park, Pune, Maharashtra 411001",
   workingHours: "24/7 Dispatch",
   socials: {
-    instagram: "https://instagram.com/journeymate",
-    facebook: "https://facebook.com/journeymate",
-    twitter: "https://twitter.com/journeymate",
+    instagram: "https://instagram.com/dhruvatour",
+    facebook: "https://facebook.com/dhruvatour",
+    twitter: "https://twitter.com/dhruvatour",
   }
 };
 
@@ -183,7 +183,7 @@ export const testimonials = [
   {
     name: "Rahul Mehta",
     rating: 5,
-    text: "Zero hidden charges. What they quoted is exactly what I paid, which is rare these days. Our corporate team only uses Journeymate now.",
+    text: "Zero hidden charges. What they quoted is exactly what I paid, which is rare these days. Our corporate team only uses Dhruva Tour now.",
   },
   {
     name: "Anjali K.",
@@ -207,7 +207,7 @@ export const faqs = [
   },
   {
     q: "Are your drivers verified?",
-    a: "Every Journeymate driver undergoes a strict background check, holds a commercial license, and has a minimum of 5 years of highway driving experience. We prioritize safety and professionalism."
+    a: "Every Dhruva Tour driver undergoes a strict background check, holds a commercial license, and has a minimum of 5 years of highway driving experience. We prioritize safety and professionalism."
   },
   {
     q: "What about driver allowance?",

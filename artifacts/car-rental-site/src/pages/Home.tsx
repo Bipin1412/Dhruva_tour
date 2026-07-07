@@ -69,8 +69,8 @@ export default function Home() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <div className="absolute inset-0 bg-background/60 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10" />
+          <div className="absolute inset-0 bg-[#2F1E0E]/65 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2F1E0E]/90 via-[#2F1E0E]/25 to-transparent z-10" />
           <img 
             src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=2000&auto=format&fit=crop" 
             alt="Luxury car on a mountain road" 
@@ -140,9 +140,9 @@ export default function Home() {
       </section>
 
       {/* Trust Stats Bar */}
-      <section className="bg-card border-y border-white/5 relative z-30">
+      <section className="bg-card border-y border-foreground/10 relative z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 divide-x divide-white/5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 divide-x divide-foreground/10">
             <div className="text-center px-4">
               <div className="text-3xl md:text-4xl font-serif text-primary mb-2">
                 <Counter end={15} suffix=",000+" />
@@ -190,7 +190,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {fleet.slice(0, 3).map((car, i) => (
             <FadeIn key={car.id} delay={i * 0.2}>
-              <div className="bg-card group rounded-sm overflow-hidden border border-white/5 hover:border-primary/30 transition-colors h-full flex flex-col">
+              <div className="bg-card group rounded-sm overflow-hidden border border-foreground/10 hover:border-primary/30 transition-colors h-full flex flex-col">
                 <div className="h-64 overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent z-10" />
                   <img src={car.image} alt={car.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -202,10 +202,10 @@ export default function Home() {
                   <h3 className="text-2xl font-serif mb-2">{car.name}</h3>
                   <div className="flex gap-4 text-sm text-muted-foreground mb-6">
                     <span>{car.capacity}</span>
-                    <span className="w-1 h-1 rounded-full bg-white/20 self-center" />
+                    <span className="w-1 h-1 rounded-full bg-foreground/20 self-center" />
                     <span>{car.luggage}</span>
                   </div>
-                  <div className="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
+                  <div className="mt-auto pt-6 border-t border-foreground/10 flex justify-between items-center">
                     <div>
                       <span className="text-sm text-muted-foreground block mb-1">Starting from</span>
                       <span className="text-xl font-medium text-primary">{car.ratePerKm}</span>
@@ -222,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Popular Routes */}
-      <section className="py-24 bg-card border-y border-white/5">
+      <section className="py-24 bg-card border-y border-foreground/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -240,7 +240,7 @@ export default function Home() {
             {packages.map((pkg, i) => (
               <FadeIn key={pkg.slug} delay={i * 0.1}>
                 <Link href={`/packages/${pkg.slug}`}>
-                  <div className="group flex items-center justify-between p-6 bg-background border border-white/5 hover:border-primary/50 transition-colors cursor-pointer relative overflow-hidden">
+                  <div className="group flex items-center justify-between p-6 bg-background border border-foreground/10 hover:border-primary/50 transition-colors cursor-pointer relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative z-10">
                       <h4 className="text-xl font-serif mb-1 group-hover:text-primary transition-colors">{pkg.title}</h4>
@@ -272,7 +272,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <FadeIn>
-                <h2 className="text-4xl md:text-5xl font-serif mb-8">The Journeymate Standard</h2>
+                <h2 className="text-4xl md:text-5xl font-serif mb-8">The Dhruva Tour Standard</h2>
                 <div className="space-y-8">
                   {[
                     { title: "No Surprise Pricing", desc: "Clear per-km rates or fixed package costs. GST invoices available for corporate billing." },
@@ -293,7 +293,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <FadeIn delay={0.2}>
-                <div className="aspect-[4/5] overflow-hidden relative border border-white/10">
+                <div className="aspect-[4/5] overflow-hidden relative border border-foreground/15">
                   <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10" />
                   <img 
                     src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&auto=format&fit=crop" 
@@ -301,7 +301,7 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-8 -left-8 bg-card border border-white/5 p-8 max-w-sm hidden md:block shadow-2xl">
+                <div className="absolute -bottom-8 -left-8 bg-card border border-foreground/10 p-8 max-w-sm hidden md:block shadow-2xl">
                   <div className="flex gap-1 mb-4">
                     {[1,2,3,4,5].map(star => <Star key={star} className="w-5 h-5 fill-primary text-primary" />)}
                   </div>
@@ -315,7 +315,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-card border-y border-white/5">
+      <section className="py-24 bg-card border-y border-foreground/10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
@@ -326,7 +326,7 @@ export default function Home() {
               {faqs.map((faq, i) => (
                 <div 
                   key={i} 
-                  className={`border border-white/5 bg-background overflow-hidden transition-all duration-300 ${openFaq === i ? 'ring-1 ring-primary/30' : ''}`}
+                  className={`border border-foreground/10 bg-background overflow-hidden transition-all duration-300 ${openFaq === i ? 'ring-1 ring-primary/30' : ''}`}
                 >
                   <button 
                     className="w-full px-6 py-5 text-left flex justify-between items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
@@ -353,7 +353,7 @@ export default function Home() {
       {/* Bottom CTA */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-background/80 z-10" />
+          <div className="absolute inset-0 bg-[#2F1E0E]/80 z-10" />
           <img 
             src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=2000&auto=format&fit=crop" 
             alt="Road" 

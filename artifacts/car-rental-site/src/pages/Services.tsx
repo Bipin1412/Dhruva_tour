@@ -83,10 +83,10 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="group bg-card border border-white/5 hover:border-primary/30 transition-all flex flex-col h-full overflow-hidden"
+                className="group bg-card border border-foreground/10 hover:border-primary/30 transition-all flex flex-col h-full overflow-hidden"
               >
                 <div className="h-48 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-background/40 group-hover:bg-transparent transition-colors z-10" />
+                  <div className="absolute inset-0 bg-[#2F1E0E]/40 group-hover:bg-transparent transition-colors z-10" />
                   <img 
                     src={service.image} 
                     alt={service.title} 

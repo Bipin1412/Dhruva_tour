@@ -46,7 +46,7 @@ export default function Fleet() {
               className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-16 items-center`}
             >
               <div className="w-full lg:w-3/5">
-                <div className="relative aspect-[16/9] lg:aspect-auto lg:h-[450px] overflow-hidden border border-white/5">
+                <div className="relative aspect-[16/9] lg:aspect-auto lg:h-[450px] overflow-hidden border border-foreground/10">
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent z-10" />
                   <img 
                     src={car.image} 
@@ -62,7 +62,7 @@ export default function Fleet() {
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-serif mb-4">{car.name}</h2>
                 
-                <div className="flex items-end gap-3 mb-8 pb-8 border-b border-white/10">
+                <div className="flex items-end gap-3 mb-8 pb-8 border-b border-foreground/15">
                   <span className="text-4xl font-medium text-primary">{car.ratePerKm}</span>
                   <span className="text-muted-foreground mb-1 uppercase tracking-wider text-sm">Rate</span>
                 </div>
@@ -104,7 +104,7 @@ export default function Fleet() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-card border border-white/10 p-8 md:p-12"
+          className="bg-card border border-foreground/15 p-8 md:p-12"
         >
           <h3 className="text-2xl font-serif mb-8 text-center">Important Terms & Conditions</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

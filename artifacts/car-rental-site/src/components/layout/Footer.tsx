@@ -5,14 +5,14 @@ import { contactInfo } from '@/data';
 
 export const Footer = () => {
   return (
-    <footer className="bg-card border-t border-white/5 pt-16 pb-8">
+    <footer className="bg-card border-t border-foreground/10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="inline-block mb-6">
               <span className="font-serif text-2xl font-bold tracking-wide text-foreground">
-                JOURNEYMATE
+                DHRUVA TOUR
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -77,8 +77,8 @@ export const Footer = () => {
 
         </div>
 
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Journeymate. All rights reserved.</p>
+        <div className="border-t border-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} Dhruva Tour. All rights reserved.</p>
           <div className="flex gap-4">
             <span className="hover:text-foreground cursor-pointer transition-colors">Privacy Policy</span>
             <span className="hover:text-foreground cursor-pointer transition-colors">Terms of Service</span>
