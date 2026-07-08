@@ -7,6 +7,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const darkText = scrolled || location !== '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,12 +50,12 @@ export const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={`text-sm font-medium tracking-wide transition-colors ${
-                  scrolled
+                  darkText
                     ? 'text-black hover:text-black/80'
                     : 'text-white/90 hover:text-white'
                 } ${
                   location === link.href
-                    ? scrolled
+                    ? darkText
                       ? 'text-black'
                       : 'text-white'
                     : ''
@@ -96,7 +97,7 @@ export const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={`block px-3 py-3 text-base font-medium border-b border-foreground/10 ${
-                  scrolled
+                  darkText
                     ? 'text-black'
                     : location === link.href
                       ? 'text-white'
