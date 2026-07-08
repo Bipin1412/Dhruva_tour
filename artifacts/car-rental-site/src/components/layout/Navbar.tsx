@@ -48,8 +48,16 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors hover:text-primary ${
-                  location === link.href ? 'text-primary' : 'text-foreground/80'
+                className={`text-sm font-medium tracking-wide transition-colors ${
+                  scrolled
+                    ? 'text-black hover:text-black/80'
+                    : 'text-white/90 hover:text-white'
+                } ${
+                  location === link.href
+                    ? scrolled
+                      ? 'text-black'
+                      : 'text-white'
+                    : ''
                 }`}
               >
                 {link.name}
@@ -88,7 +96,11 @@ export const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={`block px-3 py-3 text-base font-medium border-b border-foreground/10 ${
-                  location === link.href ? 'text-primary' : 'text-foreground/80'
+                  scrolled
+                    ? 'text-black'
+                    : location === link.href
+                      ? 'text-white'
+                      : 'text-white/90'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
