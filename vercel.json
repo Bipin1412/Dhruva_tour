@@ -1,0 +1,5 @@
+{
+  "buildCommand": "corepack pnpm --filter @workspace/car-rental-site build",
+  "outputDirectory": "artifacts/car-rental-site/dist/public",
+  "installCommand": "corepack pnpm install --ignore-scripts"
+}
