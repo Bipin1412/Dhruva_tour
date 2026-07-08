@@ -37,6 +37,9 @@ yarn-error.log
 testem.log
 /typings
 artifacts/*/vite-server*.log
+!artifacts/api-server/dist/
+!artifacts/api-server/dist/public/
+!artifacts/api-server/dist/public/**
 
 # System Files
 .DS_Store
