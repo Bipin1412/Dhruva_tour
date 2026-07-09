@@ -1,5 +1,12 @@
 import React from 'react';
 import { useLocation } from 'wouter';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 type SearchValues = {
   pickup: string;
@@ -84,7 +91,7 @@ export function CarSearchForm({
             value={values.pickup}
             onChange={update}
             placeholder="Pune"
-            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors placeholder:text-white/30 focus:border-primary/60"
+            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-base text-white outline-none transition-colors placeholder:text-white/30 focus:border-primary/60"
           />
         </label>
         <label className="space-y-2">
@@ -96,22 +103,30 @@ export function CarSearchForm({
             value={values.dropoff}
             onChange={update}
             placeholder="Mumbai"
-            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors placeholder:text-white/30 focus:border-primary/60"
+            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-base text-white outline-none transition-colors placeholder:text-white/30 focus:border-primary/60"
           />
         </label>
         <label className="space-y-2">
           <span className="text-xs uppercase tracking-[0.2em] text-white/70">
             Trip type
           </span>
-          <select
-            name="tripType"
+          <Select
             value={values.tripType}
-            onChange={update}
-            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-primary/60"
+            onValueChange={(value) =>
+              setValues((current) => ({
+                ...current,
+                tripType: value as SearchValues['tripType'],
+              }))
+            }
           >
-            <option value="one-way">One-way</option>
-            <option value="round-trip">Round-trip</option>
-          </select>
+            <SelectTrigger className="h-14 w-full rounded-2xl border border-white/10 bg-white/5 px-4 text-left text-base text-white outline-none transition-colors focus:border-primary/60 focus:ring-0">
+              <SelectValue placeholder="Select trip type" />
+            </SelectTrigger>
+            <SelectContent className="border-white/10 bg-[#22170e] text-white">
+              <SelectItem value="one-way">One-way</SelectItem>
+              <SelectItem value="round-trip">Round-trip</SelectItem>
+            </SelectContent>
+          </Select>
         </label>
         <label className="space-y-2">
           <span className="text-xs uppercase tracking-[0.2em] text-white/70">
@@ -122,7 +137,7 @@ export function CarSearchForm({
             type="date"
             value={values.pickupDate}
             onChange={update}
-            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-primary/60 [color-scheme:dark]"
+            className="h-14 w-full rounded-2xl border border-white/10 bg-white/5 px-4 text-base text-white outline-none transition-colors focus:border-primary/60 [color-scheme:dark]"
           />
         </label>
         <label className="space-y-2">
@@ -134,27 +149,27 @@ export function CarSearchForm({
             type="time"
             value={values.pickupTime}
             onChange={update}
-            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-primary/60 [color-scheme:dark]"
+            className="h-14 w-full rounded-2xl border border-white/10 bg-white/5 px-4 text-base text-white outline-none transition-colors focus:border-primary/60 [color-scheme:dark]"
           />
         </label>
-        <label className="space-y-2">
+        <label className="space-y-2 md:col-span-2 xl:col-span-3">
           <span className="text-xs uppercase tracking-[0.2em] text-white/70">
             Return date/time
           </span>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-4">
             <input
               name="returnDate"
               type="date"
               value={values.returnDate}
               onChange={update}
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-primary/60 [color-scheme:dark]"
+              className="h-14 w-full min-w-0 rounded-2xl border border-white/10 bg-white/5 px-4 text-base text-white outline-none transition-colors focus:border-primary/60 [color-scheme:dark]"
             />
             <input
               name="returnTime"
               type="time"
               value={values.returnTime}
               onChange={update}
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-primary/60 [color-scheme:dark]"
+              className="h-14 w-full min-w-0 rounded-2xl border border-white/10 bg-white/5 px-4 text-base text-white outline-none transition-colors focus:border-primary/60 [color-scheme:dark]"
             />
           </div>
         </label>

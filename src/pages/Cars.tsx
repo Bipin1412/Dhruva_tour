@@ -89,7 +89,7 @@ export default function Cars() {
 
   return (
     <main className="min-h-screen pb-20 pt-24">
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <span className="mb-4 block text-sm font-semibold uppercase tracking-[0.24em] text-primary">
             Search Cars
@@ -104,7 +104,7 @@ export default function Cars() {
         <CarSearchForm initialValues={query} compact />
       </section>
 
-      <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="mx-auto mt-16 max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
           <aside className="h-fit rounded-3xl border border-foreground/10 bg-card p-6 lg:sticky lg:top-28">
             <div className="mb-6 flex items-center gap-2">
@@ -218,7 +218,7 @@ export default function Cars() {
               </div>
             </div>
 
-            <div className="grid gap-6 xl:grid-cols-2">
+            <div className="grid gap-8 xl:grid-cols-2">
               {filteredCars.map((car, index) => {
                 const total = car.pricePerDay * days;
                 return (
@@ -228,10 +228,9 @@ export default function Cars() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-80px' }}
                     transition={{ delay: index * 0.08 }}
-                    className="group overflow-hidden border border-foreground/10 bg-card"
+                    className="group overflow-hidden border border-foreground/10 bg-card shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
-                    <div className="grid gap-0 md:grid-cols-[1.05fr_0.95fr]">
-                      <div className="relative min-h-64 overflow-hidden">
+                    <div className="relative aspect-[16/10] overflow-hidden lg:aspect-[16/9]">
                         <img
                           src={car.image}
                           alt={car.name}
@@ -242,57 +241,57 @@ export default function Cars() {
                         </div>
                       </div>
 
-                      <div className="flex flex-col p-6">
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <h3 className="text-2xl font-serif">{car.name}</h3>
-                            <div className="mt-2 flex flex-wrap gap-2 text-sm text-muted-foreground">
-                              <span>{car.transmission}</span>
-                              <span className="self-center h-1 w-1 rounded-full bg-foreground/20" />
-                              <span>{car.fuelType}</span>
-                              <span className="self-center h-1 w-1 rounded-full bg-foreground/20" />
-                              <span>{car.seats} seats</span>
-                            </div>
+                    <div className="flex flex-col gap-6 p-6 lg:p-7">
+                      <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                        <div className="max-w-xl">
+                          <h3 className="text-2xl font-serif md:text-3xl">{car.name}</h3>
+                          <div className="mt-2 flex flex-wrap gap-2 text-sm text-muted-foreground">
+                            <span>{car.transmission}</span>
+                            <span className="self-center h-1 w-1 rounded-full bg-foreground/20" />
+                            <span>{car.fuelType}</span>
+                            <span className="self-center h-1 w-1 rounded-full bg-foreground/20" />
+                            <span>{car.seats} seats</span>
                           </div>
-                          <div className="text-right">
-                            <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                              Price/day
-                            </div>
+                        </div>
+
+                        <div className="rounded-2xl border border-foreground/10 bg-background px-4 py-3 text-right">
+                          <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                            Price/day
+                          </div>
+                          <div>
                             <div className="text-2xl font-serif text-primary">
                               {money(car.pricePerDay)}
                             </div>
                           </div>
                         </div>
+                      </div>
 
-                        <div className="mt-5 space-y-2 text-sm text-muted-foreground">
-                          {car.features.slice(0, 4).map((feature) => (
-                            <div key={feature} className="flex items-center gap-2">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
-                              <span>{feature}</span>
-                            </div>
-                          ))}
-                        </div>
+                      <div className="space-y-2 text-sm text-muted-foreground md:grid md:grid-cols-2 md:gap-x-6 md:gap-y-3 md:space-y-0">
+                        {car.features.slice(0, 4).map((feature) => (
+                          <div key={feature} className="flex items-center gap-2">
+                            <CheckCircle2 className="h-4 w-4 text-primary" />
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
 
-                        <div className="mt-auto border-t border-foreground/10 pt-5">
-                          <div className="flex items-end justify-between gap-4">
-                            <div>
-                              <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                                Estimate
-                              </div>
-                              <div className="text-xl font-medium">{money(total)}</div>
-                              <div className="text-xs text-muted-foreground">
-                                For {days} day{days > 1 ? 's' : ''}
-                              </div>
-                            </div>
-                            <Link
-                              href={`/cars/${car.id}${queryString ? `?${queryString}` : ''}`}
-                              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                            >
-                              Details
-                              <ArrowRight className="h-4 w-4" />
-                            </Link>
+                      <div className="mt-auto flex flex-col gap-4 border-t border-foreground/10 pt-5 sm:flex-row sm:items-end sm:justify-between">
+                        <div>
+                          <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                            Estimate
+                          </div>
+                          <div className="text-xl font-medium">{money(total)}</div>
+                          <div className="text-xs text-muted-foreground">
+                            For {days} day{days > 1 ? 's' : ''}
                           </div>
                         </div>
+                        <Link
+                          href={`/cars/${car.id}${queryString ? `?${queryString}` : ''}`}
+                          className="inline-flex items-center gap-2 rounded-2xl bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                        >
+                          Details
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
                       </div>
                     </div>
                   </motion.article>
