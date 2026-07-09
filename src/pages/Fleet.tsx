@@ -1,18 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
-import { fleet } from '@/data';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { cars } from '@/data';
 
 export default function Fleet() {
   return (
     <main className="min-h-screen pt-24 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20 mt-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-16 mt-10 max-w-3xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-primary tracking-widest text-sm font-semibold uppercase mb-4 block"
+            className="mb-4 block text-sm font-semibold uppercase tracking-[0.24em] text-primary"
           >
             Our Vehicles
           </motion.span>
@@ -20,7 +20,7 @@ export default function Fleet() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-serif mb-6"
+            className="text-5xl font-serif md:text-6xl"
           >
             The Fleet
           </motion.h1>
@@ -28,128 +28,76 @@ export default function Fleet() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-muted-foreground font-light leading-relaxed"
+            className="mt-6 text-lg font-light leading-relaxed text-muted-foreground"
           >
-            Every vehicle in our fleet is meticulously maintained, thoroughly
-            sanitized before every trip, and driven by a verified professional.
-            Select the perfect match for your journey.
+            Browse the cars available for booking. Each vehicle shows its
+            category, price per day, features, and booking details so the user
+            can move directly into the new React booking flow.
           </motion.p>
         </div>
 
-        <div className="space-y-16 lg:space-y-24 mb-24">
-          {fleet.map((car, index) => (
-            <motion.div
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {cars.map((car, index) => (
+            <motion.article
               key={car.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.8 }}
-              className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-16 items-center`}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ delay: index * 0.08 }}
+              className="group overflow-hidden border border-foreground/10 bg-card"
             >
-              <div className="w-full lg:w-3/5">
-                <div className="relative aspect-[16/9] lg:aspect-auto lg:h-[450px] overflow-hidden border border-foreground/10">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent z-10" />
-                  <img
-                    src={car.image}
-                    alt={car.name}
-                    className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
-                  />
-                </div>
-              </div>
-
-              <div className="w-full lg:w-2/5 p-4 lg:p-0">
-                <div className="inline-block px-3 py-1 border border-primary/30 text-primary text-xs uppercase tracking-wider mb-6">
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={car.image}
+                  alt={car.name}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white backdrop-blur">
                   {car.category}
                 </div>
-                <h2 className="text-3xl lg:text-4xl font-serif mb-4">
-                  {car.name}
-                </h2>
-
-                <div className="flex items-end gap-3 mb-8 pb-8 border-b border-foreground/15">
-                  <span className="text-4xl font-medium text-primary">
-                    {car.ratePerKm}
-                  </span>
-                  <span className="text-muted-foreground mb-1 uppercase tracking-wider text-sm">
-                    Rate
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-2 gap-y-4 gap-x-8 mb-10">
-                  <div>
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider block mb-1">
-                      Capacity
-                    </span>
-                    <span className="font-medium text-lg">{car.capacity}</span>
-                  </div>
-                  <div>
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider block mb-1">
-                      Luggage
-                    </span>
-                    <span className="font-medium text-lg">{car.luggage}</span>
-                  </div>
-
-                  <div className="col-span-2 mt-4 space-y-3">
-                    {car.features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-3 text-muted-foreground">
-                        <Check className="w-4 h-4 text-primary shrink-0" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <Link
-                  href={`/contact?vehicle=${car.id}`}
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors group"
-                >
-                  Book This Car
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
               </div>
-            </motion.div>
+
+              <div className="flex h-full flex-col p-6">
+                <h2 className="text-2xl font-serif">{car.name}</h2>
+                <div className="mt-3 flex flex-wrap gap-2 text-sm text-muted-foreground">
+                  <span>{car.transmission}</span>
+                  <span className="self-center h-1 w-1 rounded-full bg-foreground/20" />
+                  <span>{car.fuelType}</span>
+                  <span className="self-center h-1 w-1 rounded-full bg-foreground/20" />
+                  <span>{car.seats} seats</span>
+                </div>
+
+                <div className="mt-6 space-y-2 text-sm text-muted-foreground">
+                  {car.features.slice(0, 4).map((feature) => (
+                    <div key={feature} className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-auto border-t border-foreground/10 pt-6">
+                  <div className="flex items-end justify-between gap-4">
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                        Price / day
+                      </div>
+                      <div className="text-2xl font-serif text-primary">
+                        Rs {car.pricePerDay.toLocaleString()}
+                      </div>
+                    </div>
+                    <Link
+                      href={`/cars/${car.id}`}
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground"
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-card border border-foreground/15 p-8 md:p-12"
-        >
-          <h3 className="text-2xl font-serif mb-8 text-center">
-            Important Terms & Conditions
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-              <h4 className="text-primary font-medium mb-2">Minimum Billing</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Outstation trips are subject to a minimum charge of 300 km per
-                calendar day. For Mumbai return trips, 350 km per day applies.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-primary font-medium mb-2">Driver Allowance</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                A daily driver allowance of ₹500 applies. Night driving (10 PM
-                to 6 AM) incurs an additional ₹500 night charge.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-primary font-medium mb-2">Extras</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Tolls, state entry taxes, and parking charges are extra and to
-                be borne by the customer on actuals.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-primary font-medium mb-2">Taxes</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                GST is applicable on the final bill amount. Corporate invoices
-                available on request.
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </main>
   );

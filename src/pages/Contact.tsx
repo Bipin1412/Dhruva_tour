@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { contactInfo, fleet, packages } from '@/data';
+import { contactInfo, cars, packages } from '@/data';
 import { MapPin, Phone, Mail, CheckCircle2, Clock } from 'lucide-react';
-import { useLocation } from 'wouter';
 
 export default function Contact() {
-  const [location] = useLocation();
   const searchParams = new URLSearchParams(window.location.search);
   const prefilledVehicle = searchParams.get('vehicle');
   const prefilledRoute = searchParams.get('route');
@@ -158,11 +156,13 @@ export default function Contact() {
                       name="vehicle"
                       value={formData.vehicle}
                       onChange={handleChange}
-                      className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground appearance-none rounded-none"
+                    className="w-full bg-background border border-foreground/15 px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground appearance-none rounded-none"
                     >
                       <option value="">Select a vehicle (optional)</option>
-                      {fleet.map(car => (
-                        <option key={car.id} value={car.id}>{car.name} ({car.capacity})</option>
+                      {cars.map((car) => (
+                        <option key={car.id} value={car.id}>
+                          {car.name} ({car.seats} seats)
+                        </option>
                       ))}
                     </select>
                   </div>

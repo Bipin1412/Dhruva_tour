@@ -3,7 +3,8 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import Home from '@/pages/Home';
-// Stubs for the rest, we will write them next
+import Cars from '@/pages/Cars';
+import CarDetail from '@/pages/CarDetail';
 import Fleet from '@/pages/Fleet';
 import Services from '@/pages/Services';
 import Packages from '@/pages/Packages';
@@ -31,6 +32,8 @@ function App() {
       <Layout>
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/cars" component={Cars} />
+          <Route path="/cars/:id" component={CarDetail} />
           <Route path="/fleet" component={Fleet} />
           <Route path="/services" component={Services} />
           <Route path="/packages" component={Packages} />
