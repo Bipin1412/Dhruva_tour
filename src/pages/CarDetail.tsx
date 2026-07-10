@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Camera, CheckCircle2, Fuel, Gauge, ShieldCheck } from 'lucide-react';
 import NotFound from '@/pages/NotFound';
 import { cars } from '@/data';
-import { CarSearchForm } from '@/components/booking/CarSearchForm';
 
 function parseQuery(search: string) {
   const params = new URLSearchParams(search);
@@ -126,7 +125,6 @@ export default function CarDetail() {
               </motion.div>
             </section>
 
-            <CarSearchForm initialValues={query} compact />
           </div>
 
           <aside className="lg:sticky lg:top-28 h-fit rounded-3xl border border-primary/20 bg-card p-8 shadow-2xl">
